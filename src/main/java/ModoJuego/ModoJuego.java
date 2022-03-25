@@ -41,14 +41,22 @@ public class ModoJuego {
         System.out.println("3. Modo Creativo");
         int opcion= entrada.nextInt();
         
-        
-//        if (opcion) {
-//            
-//        }
+        while(Mascotas.estaVivo()){
+            
+            if(   ){
+                
+                
+                
+            }
+            
+            
+            
+        }
+
         
         
 
-    }
+    }//Fin Jugar
 
     public void calcularVidas() {
 
