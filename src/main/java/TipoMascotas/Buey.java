@@ -12,5 +12,16 @@ import Mascotas.Mascotas;
  * @author Ivan Rivera
  */
 public class Buey extends Mascotas {
-    
+
+    public Buey() {
+        nombre = "Buey";
+        unidadesDaño = 1;
+        unidadesVida = 4;
+        habilidad = "Mejor me protejo";
+        tipo = "Mamífero";
+
+        efecto = false;
+
+    }
+
 }

@@ -5,33 +5,26 @@
  */
 package Mascotas;
 
-/**
- *
- * @author Ivan Rivera
- */
 public class Mascotas {
 
+    protected String nombre;
     protected int unidadesDaño;
     protected int unidadesVida;
+    protected String habilidad;
+    protected int nivel;
+    protected String tipo;
     protected boolean efecto;
     protected int vidasSuficientes;
-
-    public boolean calcularVida() {
-
-        return vidasSuficientes > 0;
-
-    }
 
 //    public boolean estaVivo(){
 //        
 //        return puntosVida>0;
 //        
 //    }
-    public int obtenerPuntosDeVida() {
-
-        return puntosVida;
-    }
-
+//    public int obtenerPuntosDeVida() {
+//
+//        return puntosVida;
+//    }
     private int calcularDefensa() {
         int defensa = MetodosAleatorios.MetodoAleatorio.generarAleatorio(unidadesDaño, unidadesVida);
         return defensa;
@@ -39,7 +32,13 @@ public class Mascotas {
 
     @Override
     public String toString() {
-        return "Mascotas{" + "unidadesDa\u00f1o=" + unidadesDaño + ", unidadesVida=" + unidadesVida + ", efecto=" + efecto + ", puntosVida=" + puntosVida + '}';
+        return "\n Datos Mascotas: "
+                + "\n Nombre = " + nombre
+                + "\n Unidades Daño = " + unidadesDaño
+                + "\n Unidades Vida = " + unidadesVida
+                + "\n Habilidades   = " + habilidad
+                + "\n Tipo          = " + tipo;
+
     }
 
 }

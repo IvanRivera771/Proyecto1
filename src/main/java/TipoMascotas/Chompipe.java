@@ -14,5 +14,13 @@ import Mascotas.Mascotas;
 public class Chompipe  extends Mascotas{
     
     
-    
+    public Chompipe(){
+        nombre= "Chompipe";
+        unidadesDaño=3;
+        unidadesVida=4;
+        efecto=false;
+        
+        
+        
+    }
 }

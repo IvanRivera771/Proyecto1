@@ -13,4 +13,14 @@ import Mascotas.Mascotas;
  */
 public class Cocodrilo extends Mascotas{
     
+    public Cocodrilo(){
+        nombre= "Cocodrilo";
+        unidadesDaño=8;
+        unidadesVida=4;
+        efecto=false;
+        
+        
+        
+    }
+    
 }

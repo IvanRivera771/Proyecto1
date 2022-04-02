@@ -11,6 +11,15 @@ import Mascotas.Mascotas;
  *
  * @author Ivan Rivera
  */
-public class Pavoreal extends Mascotas{
-    
+public class Pavoreal extends Mascotas {
+
+    public Pavoreal() {
+
+        nombre = "Pavoreal";
+        unidadesDaño = 2;
+        unidadesVida = 5;
+        efecto = false;
+
+    }
+
 }

@@ -9,4 +9,12 @@ import Mascotas.Mascotas;
 
 public class Jaguar extends Mascotas {
 
+    public Jaguar() {
+        nombre = "Jaguar";
+        unidadesDaño = 7;
+        unidadesVida = 4;
+        efecto = false;
+
+    }
+
 }

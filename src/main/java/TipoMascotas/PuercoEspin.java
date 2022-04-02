@@ -13,4 +13,16 @@ import Mascotas.Mascotas;
  */
 public class PuercoEspin extends Mascotas {
     
+    
+    public PuercoEspin(){
+          nombre = "PuercoEspin";
+        unidadesDaño = 3;
+        unidadesVida = 2;
+        efecto = false;
+        
+        
+        
+        
+    }
+    
 }

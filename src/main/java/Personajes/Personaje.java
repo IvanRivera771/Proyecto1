@@ -1,18 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Personajes;
 
-/**
- *
- * @author Ivan Rivera
- */
+import Mascotas.Mascotas;
+
 public class Personaje {
+
+    Mascotas[] mascotas;
+
+    public Personaje() {
+        
+        
+
+    }
     
     
     
     
     
-}
+    
+
+}//Fin Personaje

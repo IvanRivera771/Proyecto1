@@ -11,9 +11,17 @@ import Mascotas.Mascotas;
  *
  * @author Ivan Rivera
  */
-public class Caballo extends Mascotas{
-    
-    
-    
-    
+public class Caballo extends Mascotas {
+
+    public Caballo() {
+
+        nombre = "Caballo";
+        unidadesDaño = 2;
+        unidadesVida = 1;
+        habilidad= "Rugido Aliado";
+        tipo= "Mamífero/Dosmestico";
+        efecto = false;
+
+    }
+
 }

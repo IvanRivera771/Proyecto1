@@ -7,7 +7,15 @@ package TipoMascotas;
 
 import Mascotas.Mascotas;
 
+public class Mapache extends Mascotas {
 
-public class Mapache extends Mascotas{
-    
+    public Mapache() {
+
+        nombre = "Mapache";
+        unidadesDaño = 5;
+        unidadesVida = 4;
+        efecto = false;
+
+    }
+
 }

@@ -11,6 +11,17 @@ import Mascotas.Mascotas;
  *
  * @author Ivan Rivera
  */
-public class Canguro extends Mascotas{
-    
+public class Canguro extends Mascotas {
+
+    public Canguro() {
+
+        nombre = " Canguro";
+        unidadesDaño = 1;
+        unidadesVida = 2;
+        habilidad="Ya quiero pelear";
+        tipo= "Mamífero/Terrestre";
+        efecto = false;
+
+    }
+
 }

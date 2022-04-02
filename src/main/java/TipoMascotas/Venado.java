@@ -10,4 +10,15 @@ import Mascotas.Mascotas;
 
 public class Venado extends Mascotas{
     
+    
+    public Venado(){
+          nombre = "Venado";
+        unidadesDaño = 1;
+        unidadesVida = 1;
+        efecto = false;
+        
+        
+        
+    }
+    
 }

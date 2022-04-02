@@ -13,4 +13,18 @@ import Mascotas.Mascotas;
  */
 public class Camaleon extends Mascotas {
     
+    
+    public Camaleon(){
+        
+        nombre= "Camaleón";
+        unidadesDaño= 8;
+        unidadesVida=8;
+        habilidad= "Habilidades por nivel";
+        tipo="Reptil/Solitario";
+        efecto=false;
+        
+        
+        
+    }
+    
 }

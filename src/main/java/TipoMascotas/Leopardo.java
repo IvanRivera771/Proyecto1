@@ -9,4 +9,15 @@ import Mascotas.Mascotas;
 
 public class Leopardo extends Mascotas{
     
+    
+    public Leopardo(){
+        
+          nombre = "Leopardo";
+        unidadesDaño = 10;
+        unidadesVida = 4;
+        efecto = false;
+        
+        
+    }
+    
 }

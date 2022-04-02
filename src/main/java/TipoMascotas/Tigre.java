@@ -7,7 +7,15 @@ package TipoMascotas;
 
 import Mascotas.Mascotas;
 
-
 public class Tigre extends Mascotas {
-    
+
+    public Tigre() {
+
+        nombre = "Tigre";
+        unidadesDaño = 4;
+        unidadesVida = 3;
+        efecto = false;
+
+    }
+
 }

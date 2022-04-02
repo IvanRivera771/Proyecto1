@@ -11,6 +11,15 @@ import Mascotas.Mascotas;
  *
  * @author Ivan Rivera
  */
-public class Puma extends Mascotas{
-    
+public class Puma extends Mascotas {
+
+    public Puma() {
+
+        nombre = "Puma";
+        unidadesDaño = 3;
+        unidadesVida = 7;
+        efecto = false;
+
+    }
+
 }

@@ -13,4 +13,17 @@ import Mascotas.Mascotas;
  */
 public class Panda extends Mascotas{
     
+    
+    public Panda(){
+        
+        
+          nombre = "Panda";
+        unidadesDaño = 5;
+        unidadesVida = 5;
+        efecto = false;
+        
+        
+        
+    }
+    
 }

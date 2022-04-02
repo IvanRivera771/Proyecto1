@@ -12,18 +12,16 @@ import Mascotas.Mascotas;
  * @author Ivan Rivera
  */
 public class Ballena extends Mascotas {
-    
-    public Ballena(){
-            unidadesDaño=3;
-            unidadesVida=8;
-            efecto=false;
-            
-        
-        
-        
-        
-        
+
+    public Ballena() {
+        nombre = "Ballena";
+        unidadesDaño = 3;
+        unidadesVida = 8;
+        habilidad = "Succion";
+        tipo = "Acuático";
+
+        efecto = false;
+
     }
-    
-    
+
 }

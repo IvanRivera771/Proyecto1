@@ -13,7 +13,7 @@ public class Hormiga extends Mascotas{
     
     
     public Hormiga(){
-        
+        nombre="Hormiga";
         unidadesDaño = 2;
         unidadesVida = 1;
         efecto = false;

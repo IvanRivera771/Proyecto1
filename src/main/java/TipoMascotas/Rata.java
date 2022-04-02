@@ -13,4 +13,15 @@ import Mascotas.Mascotas;
  */
 public class Rata extends Mascotas{
     
+    
+    public Rata(){
+        
+         nombre = "Rata";
+        unidadesDaño = 4;
+        unidadesVida = 5;
+        efecto = false;
+        
+        
+    }
+    
 }

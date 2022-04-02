@@ -11,12 +11,17 @@ import Mascotas.Mascotas;
  *
  * @author Ivan Rivera
  */
-public class Ardilla extends Mascotas{
-    
-    public Ardilla(){
-        
-               
-        
-        
-    }   
+public class Ardilla extends Mascotas {
+
+    public Ardilla() {
+
+        nombre = "Ardilla";
+        unidadesDaño = 2;
+        unidadesVida = 5;
+        habilidad = "Rebajas";
+        tipo = "Domestico";
+
+        efecto = false;
+
+    }
 }

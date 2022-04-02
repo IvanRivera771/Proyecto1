@@ -13,4 +13,14 @@ import Mascotas.Mascotas;
  */
 public class Nutria extends Mascotas {
     
+    public Nutria(){
+        
+          nombre = "Nutria";
+        unidadesDaño = 1;
+        unidadesVida = 2;
+        efecto = false;
+        
+        
+    }
+    
 }

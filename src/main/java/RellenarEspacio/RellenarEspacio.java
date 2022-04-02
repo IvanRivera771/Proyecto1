@@ -8,10 +8,8 @@ public class RellenarEspacio extends Mascotas {
         unidadesDaño = 0;
         unidadesVida = 0;
         efecto = false;
-        puntosVida=4;
-        
+        vidasSuficientes = 4;
+
     }
-    
-    
 
 }

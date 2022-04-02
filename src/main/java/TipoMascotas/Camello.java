@@ -7,16 +7,17 @@ package TipoMascotas;
 
 import Mascotas.Mascotas;
 
+public class Camello extends Mascotas {
 
-public class Camello extends  Mascotas{
-    
-    public Camello(){
-        
+    public Camello() {
+        nombre = "Camello";
         unidadesDaño = 2;
         unidadesVida = 5;
+        habilidad = "Repartir Poder";
+        tipo = "Solitario";
+
         efecto = false;
-        
-        
+
     }
-    
+
 }

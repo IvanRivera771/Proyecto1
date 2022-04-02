@@ -10,4 +10,15 @@ import Mascotas.Mascotas;
 
 public class Vaca extends Mascotas{
     
+    public Vaca(){
+        
+          nombre = "Vaca";
+        unidadesDaño = 4;
+        unidadesVida = 6;
+        efecto = false;
+        
+        
+        
+    }
+    
 }

@@ -10,6 +10,7 @@ import Mascotas.Mascotas;
 public class Pescado extends Mascotas {
 
     public Pescado() {
+        nombre= "Pescado";
         unidadesDaño = 2;
         unidadesVida = 3;
         efecto = false;

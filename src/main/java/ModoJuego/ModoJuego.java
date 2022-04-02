@@ -1,12 +1,12 @@
-
 package ModoJuego;
 
 import Mascotas.Mascotas;
+import Personajes.Jugador;
 import RellenarEspacio.RellenarEspacio;
 import java.util.Random;
 import java.util.Scanner;
 import TipoMascotas.*;
-
+import com.sun.xml.internal.ws.addressing.v200408.MemberSubmissionAddressingConstants;
 
 public class ModoJuego {
 
@@ -14,16 +14,29 @@ public class ModoJuego {
     private Mascotas[] Mascotas1;
     private int niveles = 1;
     private Mascotas[] comprarMascotas;
-//    private RellenarEspacio RellenarEspacio();
+    private Jugador jugador;
+    private Mascotas[] mascotasJugador;
+    Mascotas espacioVacio;
+    int oro;
+    int vida;
+    Scanner entrada;
 
+//    private RellenarEspacio RellenarEspacio();
     public ModoJuego() {
+
+        jugador = new Jugador();
         Mascotas = new Mascotas();
         comprarMascotas = new Mascotas[5];
-        comprarMascotas[0] = new RellenarEspacio();
-        comprarMascotas[1] = new RellenarEspacio();
-        comprarMascotas[2] = new RellenarEspacio();
-        comprarMascotas[3] = new RellenarEspacio();
-        comprarMascotas[4] = new RellenarEspacio();
+        espacioVacio = new RellenarEspacio();
+        comprarMascotas[0] = espacioVacio;
+        comprarMascotas[1] = espacioVacio;
+        comprarMascotas[2] = espacioVacio;
+        comprarMascotas[3] = espacioVacio;
+        comprarMascotas[4] = espacioVacio;
+        oro = 10;
+        vida = 10;
+
+        entrada = new Scanner(System.in);
 
     }
 
@@ -39,34 +52,74 @@ public class ModoJuego {
         System.out.println("1. Modo Arena");
         System.out.println("2. Modo Versus");
         System.out.println("3. Modo Creativo");
-        int opcion= entrada.nextInt();
-        
-        while(Mascotas.estaVivo()){
-            
-            if(   ){
-                
-                
-                
-            }
-            
-            
-            
-        }
-
-        
-        
+        int opcion = entrada.nextInt();
 
     }//Fin Jugar
 
-    public void calcularVidas() {
+    public void iniciarJuego() {
+
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.println("Bienvenidos al Juego ");
+        System.out.println("*******AUTO PETS*******");
+        System.out.println("Elije el Modo que quieras");
+        System.out.println("Antes de jugar debes elejir el escenario en el");
+        System.err.println("que quieras librar Batalla");
+
+        System.out.println("Se inicia el Juego....");
+        System.out.println("Presiona Enter para continuar...");
+        entrada.nextLine();
+        Mascotas1 = tiendaMascotas();
+        while (jugador.calcularVida()) {
+
+            System.out.println(":::::::::::::::::::::::::::::::::");
+
+            System.out.println("Estos son los animales en tienda");
+
+            System.out.println("Puedes comprar 3 Mascotas en la tienda");
+            System.out.println("Selecciona la opcion para continuar");
+            System.out.println("1. Comprar ");
+            int opcion = entrada.nextInt();
+
+            switch (opcion) {
+
+                case 1:
+                    mostrarMascotas(Mascotas1);
+                    mascotasJugador = comprarMascotas(Mascotas1);
+                    mostrarEquipo(mascotasJugador);
+
+            }
+
+            entrada.nextLine();
+        }
 
     }
 
-    public void calcularVictorias() {
+    private Mascotas[] ordenarMascotas(Mascotas[] ordenar) {
+        int pos;
+        int opcion;
+        Mascotas mover;
 
-    }
+        System.out.println("Ordena a tus mascotas a tu preferencia");
+        mostrarEquipo(ordenar);
 
-//    Aca mostramos los animales en el equipo
+        System.out.println("Ingrese la posición de la mascota que va a mover");
+        opcion = entrada.nextInt();
+
+        System.out.println("En que posicion quiere guardar la Mascota");
+        pos = entrada.nextInt();
+
+        mover = ordenar[opcion - 1];
+        ordenar[opcion - 1] = ordenar[pos - 1];
+        ordenar[pos - 1] = mover;
+
+        mostrarEquipo(ordenar);
+        return ordenar;
+        
+
+    }//Fin OrdenarMascotas
+
+    //Mostramos los animales en el equipo
     private void mostrarEquipo(Mascotas[] Mascotas) {
 
         for (int i = 0; i < Mascotas.length; i++) {
@@ -77,27 +130,38 @@ public class ModoJuego {
 
     }
 
-    private Mascotas[] comprarMascotas(Mascotas[] Mascotas) {
+    private Mascotas[] comprarMascotas(Mascotas[] mascotas) {
         Scanner entrada = new Scanner(System.in);
+        boolean comprado = false;
         int opcion;
         System.out.println("Que mascota deseas comprar");
         opcion = entrada.nextInt();
 
-        for (int i = 0; i < comprarMascotas.length; i++) {
+        if (oro > 2) {
+            for (int i = 0; i < comprarMascotas.length; i++) {
 
-            if (comprarMascotas[i] == new RellenarEspacio()) {
-                comprarMascotas[i] = Mascotas[opcion - 1];
-                break;
+                if (comprarMascotas[i] == espacioVacio) {
+                    comprarMascotas[i] = mascotas[opcion - 1];
+                    mascotas[opcion - 1] = espacioVacio;
+                    oro -= 3;
+                    System.out.println("Mascota comprada");
+                    System.out.println("Cantidad de oro " + oro);
+                    comprado = true;
+                    break;
 
-            } else {
+                } //Fin if 
 
+            }//Fin for
+            if (comprado == false) {
                 System.out.println("Ya no hay espacio en el equipo");
 
-            }//Fin if else
+            }
+        } else {
 
-        }//Fin for
+            System.out.println("Ya no te queda mas oro, no puedes comprar mas mascotas");
 
-        return Mascotas;
+        }
+        return comprarMascotas;
 
     }//Fin ComprarMascotas
 
@@ -120,17 +184,10 @@ public class ModoJuego {
             espacioMascotas[i] = generarMascotas(niveles);
 
         }
-        
-        mostrarMascotas(espacioMascotas);
+
         niveles++;
         return espacioMascotas;
 
-    }
-
-    public int calcularNiveles() {
-        int niveles = 0;
-
-        return niveles;
     }
 
     public Mascotas generarMascotas(int niveles) {

@@ -8,5 +8,14 @@ package TipoMascotas;
 import Mascotas.Mascotas;
 
 public class Jirafa extends Mascotas {
+    
+    public Jirafa(){
+          nombre = "Jirafa";
+        unidadesDaño = 2;
+        unidadesVida = 5;
+        efecto = false;
+        
+        
+    }
 
 }

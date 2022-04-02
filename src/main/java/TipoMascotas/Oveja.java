@@ -13,5 +13,16 @@ import Mascotas.Mascotas;
  */
 public class Oveja extends Mascotas{
     
+    public Oveja(){
+        
+          nombre = "Oveja";
+        unidadesDaño = 2;
+        unidadesVida = 2;
+        efecto = false;
+        
+        
+        
+    }
+    
     
 }

@@ -11,6 +11,14 @@ import Mascotas.Mascotas;
  *
  * @author Ivan Rivera
  */
-public class Quetzal extends Mascotas{
-    
+public class Quetzal extends Mascotas {
+
+    public Quetzal() {
+        nombre = "Quetzal";
+        unidadesDaño = 10;
+        unidadesVida = 10;
+        efecto = false;
+
+    }
+
 }

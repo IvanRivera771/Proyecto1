@@ -10,7 +10,7 @@ import Mascotas.Mascotas;
 public class Serpiente extends Mascotas {
 
     public Serpiente() {
-
+        nombre= "Serpiente";
         unidadesDaño = 6;
         unidadesVida = 6;
         efecto = false;

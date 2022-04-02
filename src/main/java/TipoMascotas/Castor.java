@@ -13,8 +13,12 @@ import Mascotas.Mascotas;
 public class Castor extends Mascotas {
 
     public Castor() {
+        nombre= "Castor";
         unidadesDaño = 2;
         unidadesVida = 2;
+        habilidad= "Represa";
+        tipo= "Terrestre/Acuatico ";
+        
         efecto = false;
 
     }

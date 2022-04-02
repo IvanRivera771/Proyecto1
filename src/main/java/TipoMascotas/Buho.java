@@ -13,4 +13,18 @@ import Mascotas.Mascotas;
  */
 public class Buho extends Mascotas{
     
+    public Buho(){
+        
+        nombre =  "Buho";
+        unidadesDaño=5;
+        unidadesVida= 3;
+        habilidad="Suerte Amigos";
+        tipo= "Volador/Solitario";
+        efecto= false;
+        
+        
+        
+    }
+    
+    
 }

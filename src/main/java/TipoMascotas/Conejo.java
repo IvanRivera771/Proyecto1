@@ -7,7 +7,15 @@ package TipoMascotas;
 
 import Mascotas.Mascotas;
 
+public class Conejo extends Mascotas {
 
-public class Conejo extends Mascotas{
-    
+    public Conejo() {
+
+        nombre = "Conejo";
+        unidadesDaño = 3;
+        unidadesVida = 2;
+        efecto = false;
+
+    }
+
 }

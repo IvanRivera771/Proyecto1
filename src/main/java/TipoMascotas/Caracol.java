@@ -11,6 +11,17 @@ import Mascotas.Mascotas;
  *
  * @author Ivan Rivera
  */
-public class Caracol extends Mascotas{
-    
+public class Caracol extends Mascotas {
+
+    public Caracol() {
+
+        nombre = "Caracol";
+        unidadesDaño = 2;
+        unidadesVida = 2;
+        habilidad = "Resurgir";
+        tipo = "Insecto/Solitario";
+        efecto = false;
+
+    }
+
 }

@@ -14,7 +14,7 @@ import Mascotas.Mascotas;
 public class Rinoceronte extends Mascotas{
     
     public Rinoceronte(){
-        
+        nombre= "Rinoceronte";
         unidadesDaño = 5;
         unidadesVida = 8;
         efecto = false;

@@ -13,4 +13,15 @@ import Mascotas.Mascotas;
  */
 public class Mono extends Mascotas {
     
+    public Mono(){
+       
+          nombre = "Mono";
+        unidadesDaño = 1;
+        unidadesVida = 2;
+        efecto = false;
+        
+        
+        
+    }
+    
 }

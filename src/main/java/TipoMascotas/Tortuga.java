@@ -10,4 +10,16 @@ import Mascotas.Mascotas;
 
 public class Tortuga extends Mascotas{
     
+    
+    public Tortuga(){
+        
+          nombre = "Tortuga";
+        unidadesDaño = 1;
+        unidadesVida = 2;
+        efecto = false;
+        
+        
+        
+    }
+    
 }

@@ -14,7 +14,7 @@ import Mascotas.Mascotas;
 public class Mosquito extends Mascotas {
 
     public Mosquito() {
-
+        nombre= "Mosquito";
         unidadesDaño = 2;
         unidadesVida = 2;
         efecto = false;

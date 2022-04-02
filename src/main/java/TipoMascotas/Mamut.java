@@ -13,4 +13,14 @@ import Mascotas.Mascotas;
  */
 public class Mamut extends Mascotas {
     
+    public Mamut(){
+        
+          nombre = "Mamut";
+        unidadesDaño = 3;
+        unidadesVida = 10;
+        efecto = false;
+        
+        
+    }
+    
 }
