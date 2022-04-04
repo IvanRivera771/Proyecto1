@@ -7,11 +7,11 @@ package Mascotas;
 
 public class Mascotas {
 
-    protected String nombre;
-    protected int unidadesDaño;
-    protected int unidadesVida;
+    public String nombre;
+    public int unidadesDaño;
+    public int unidadesVida;
     protected String habilidad;
-    protected int nivel;
+    public int nivel;
     protected String tipo;
     protected boolean efecto;
     protected int vidasSuficientes;

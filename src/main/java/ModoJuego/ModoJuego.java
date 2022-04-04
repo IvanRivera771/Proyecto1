@@ -6,33 +6,34 @@ import RellenarEspacio.RellenarEspacio;
 import java.util.Random;
 import java.util.Scanner;
 import TipoMascotas.*;
-import com.sun.xml.internal.ws.addressing.v200408.MemberSubmissionAddressingConstants;
+
 
 public class ModoJuego {
 
     private Mascotas Mascotas;
     private Mascotas[] Mascotas1;
+    private Mascotas[] mascotas2;
     private int niveles = 1;
     private Mascotas[] comprarMascotas;
     private Jugador jugador;
     private Mascotas[] mascotasJugador;
+
     Mascotas espacioVacio;
     int oro;
     int vida;
-    Scanner entrada;
+    static Scanner entrada;
 
 //    private RellenarEspacio RellenarEspacio();
     public ModoJuego() {
 
         jugador = new Jugador();
         Mascotas = new Mascotas();
-        comprarMascotas = new Mascotas[5];
+        comprarMascotas = new Mascotas[3];
         espacioVacio = new RellenarEspacio();
         comprarMascotas[0] = espacioVacio;
         comprarMascotas[1] = espacioVacio;
         comprarMascotas[2] = espacioVacio;
-        comprarMascotas[3] = espacioVacio;
-        comprarMascotas[4] = espacioVacio;
+
         oro = 10;
         vida = 10;
 
@@ -70,29 +71,144 @@ public class ModoJuego {
         System.out.println("Presiona Enter para continuar...");
         entrada.nextLine();
         Mascotas1 = tiendaMascotas();
+
         while (jugador.calcularVida()) {
 
             System.out.println(":::::::::::::::::::::::::::::::::");
-
             System.out.println("Estos son los animales en tienda");
-
             System.out.println("Puedes comprar 3 Mascotas en la tienda");
             System.out.println("Selecciona la opcion para continuar");
             System.out.println("1. Comprar ");
+            System.out.println("2. Ordenar Mascotas");
+            System.out.println("3. Vender Mascotas");
+            System.out.println("4. Fusionar Mascotas");
+            System.out.println("5. Pelea Mascotas");
+            System.out.println("::::::::::::::::::::::::::::::::::");
             int opcion = entrada.nextInt();
 
             switch (opcion) {
 
                 case 1:
-                    mostrarMascotas(Mascotas1);
-                    mascotasJugador = comprarMascotas(Mascotas1);
+
+                    if (oro > 2) {
+
+                        mostrarMascotas(Mascotas1);
+                        mascotasJugador = comprarMascotas(Mascotas1);
+                        mostrarEquipo(mascotasJugador);
+
+                    }
+                    break;
+
+                case 2:
+
+                    mascotasJugador = ordenarMascotas(mascotasJugador);
+
+                    break;
+                case 3:
+
+                    mascotasJugador = VenderMascotas(mascotasJugador);
+
                     mostrarEquipo(mascotasJugador);
+                    break;
+
+                case 4:
+
+                    mascotasJugador = fusionarMascotas(mascotasJugador);
+                    mostrarEquipo(mascotasJugador);
+
+                    break;
+
+                case 5:
+
+                    combateMascotas(mascotasJugador);
+
+                    break;
 
             }
 
-            entrada.nextLine();
         }
 
+    }//Fin iniciar Juego
+
+    private void combateMascotas(Mascotas[] heroes) {
+
+        System.out.println("Estas son las mascotas de tu Equipo");
+        mostrarEquipo(heroes);
+
+        System.out.println("::::::::::::::::::::::::::::::::::::::::");
+        mascotas2 = tiendaMascotas();
+        System.out.println("Estos son las mascotas Enemigas");
+        mostrarEquipo(mascotas2);
+
+        for (int i = 0; i < heroes.length; i++) {
+
+            if (heroes[i].unidadesDaño > mascotas2[i].unidadesVida) {
+
+                System.out.println("Has reducido la vida del la mascota conttraria" + heroes[i]+mascotas2[i]);
+
+                if (heroes[i].unidadesDaño == mascotas2[i].unidadesVida) {
+                    System.out.println("Los oponentes han perdido");
+
+                }
+
+            } else if (heroes[i].unidadesDaño < mascotas2[i].unidadesVida) {
+
+                System.out.println("Has reducido la vida del la mascota conttraria");
+
+                if (heroes[i].unidadesDaño == mascotas2[i].unidadesVida) {
+                    
+                    System.out.println("Los oponentes han perdido");
+
+                }
+
+            }
+
+        }
+
+    }//combateMascotas
+
+    private Mascotas[] fusionarMascotas(Mascotas[] fusionar) {
+
+        int opcion;
+        int pos;
+
+        mostrarEquipo(fusionar);
+        System.out.println("Elija la mascota que desea fusionar");
+        opcion = entrada.nextInt();
+
+        System.out.println("En que posicion quiere colocar la mascota seleccionada");
+        pos = entrada.nextInt();
+
+        if (fusionar[pos - 1].nombre.equals(fusionar[opcion - 1].nombre)) {
+
+            fusionar[pos - 1].unidadesVida += 1; // unidades de vida= unidades de vida mas 
+            fusionar[pos - 1].unidadesDaño += 1;
+            fusionar[opcion - 1] = espacioVacio;
+
+        } else {
+
+            System.out.println("No son iguales");
+
+        }
+
+        return fusionar;
+    }//Fin fusionar Mascotas
+
+    private Mascotas[] VenderMascotas(Mascotas[] vender) {
+        int opcion;
+        Mascotas mover;
+
+        mostrarEquipo(vender);
+        System.out.println("");
+        System.out.println("Seleccione la mascota que desee vender");
+        opcion = entrada.nextInt();
+
+//        mover = vender[opcion - 1];
+        vender[opcion - 1] = espacioVacio;
+        oro += 3;
+
+        //vender[opcion - 1] = mover;
+        return vender;
     }
 
     private Mascotas[] ordenarMascotas(Mascotas[] ordenar) {
@@ -115,7 +231,6 @@ public class ModoJuego {
 
         mostrarEquipo(ordenar);
         return ordenar;
-        
 
     }//Fin OrdenarMascotas
 
@@ -135,6 +250,10 @@ public class ModoJuego {
         boolean comprado = false;
         int opcion;
         System.out.println("Que mascota deseas comprar");
+        System.out.println("Selecciona la opcion correcta");
+        System.out.println("1. Primera Mascota");
+        System.out.println("2. Segunda Mascota");
+        System.out.println("3. Tercera Mascota");
         opcion = entrada.nextInt();
 
         if (oro > 2) {
